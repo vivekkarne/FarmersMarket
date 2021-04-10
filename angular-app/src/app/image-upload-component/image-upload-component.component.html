@@ -1,0 +1,8 @@
+<label class="image-upload-container btn btn-bwm">
+  <span>Select Image</span>
+  <input #imageInput
+         type="file"
+         accept="image/*"
+   >
+</label>
+<button type="button" class="btn btn-outline-primary" (click)="processFile(imageInput)">Upload</button>
