@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ImageUploadComponentComponent } from '../image-upload-component/image-upload-component.component'
 import { ResultCardsComponent } from '../result-cards/result-cards.component'
 import { FetchServiceService } from '../fetch-service.service';
-import { Router} from '@angular/router';
+// import { Router } from '@angular/router';
+
+
+import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 class ImageSnippet {
 	pending: boolean = false;
@@ -20,7 +25,9 @@ export class HomeComponentComponent implements OnInit {
    resultFlag=false;
 
 selectedFile: ImageSnippet;
-  constructor(private srv: FetchServiceService, private router: Router) { }
+  constructor(private srv: FetchServiceService, private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
   }
@@ -34,16 +41,33 @@ selectedFile: ImageSnippet;
     reader.addEventListener('load', (event: any) => {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
-	  this.selectedFile.pending = true;
-      this.results=this.srv.uploadImage(this.selectedFile.file);
-	  console.log(this.results);
-	  this.resultFlag=true;
+      console.log("selectedFile: ", this.selectedFile)
+      var extract = this.selectedFile.src;
+
+      const headers = {
+        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Credentials': 'true'};
+
+
+      // post request - to the model
+      this.http.post("https://veggie-predictor.herokuapp.com/predict", extract, {headers})
+        .subscribe((data) => {
+          console.log("data from post endpoint: ", data)
+      })
+
+
+	  // this.selectedFile.pending = true;
+      // this.results=this.srv.uploadImage(this.selectedFile.file);
+	  // console.log("from files: ", this.results);
+      this.resultFlag = true;
+      
         
     });
 
 
     reader.readAsDataURL(file);
-	this.router.navigate(['/results']);
+    this.router.navigate(['/results']);
+    
   }
   
   searchText(query) {

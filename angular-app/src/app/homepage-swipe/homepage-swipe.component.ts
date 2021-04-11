@@ -6,23 +6,19 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
-import {
-HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG} 
-from '@angular/platform-browser';
-
 @Component({
-  selector: 'app-swipe',
-  templateUrl: './swipe.component.html',
-  styleUrls: ['./swipe.component.css']
+  selector: 'app-homepage-swipe',
+  templateUrl: './homepage-swipe.component.html',
+  styleUrls: ['./homepage-swipe.component.css']
 })
-export class SwipeComponent implements OnInit {
+export class HomepageSwipeComponent implements OnInit {
 
   flag = false;
 
   json;
   new_limit_cards = []
 
-  constructor(private http: HttpClient,
+    constructor(private http: HttpClient,
     private router: Router,
     private route: ActivatedRoute,) { }
 
@@ -34,18 +30,18 @@ this.http.get("http://localhost:9000/products")
           console.log("json: ", this.json)
 
           // get the result value
-          var json_string = localStorage.getItem("result")
-          var actual_json = JSON.parse(json_string)
-          var get_search_value = actual_json.result;
+          // var json_string = localStorage.getItem("result")
+          // var actual_json = JSON.parse(json_string)
+          // var get_search_value = actual_json.result;
 
-          console.log("value to filter from: ", get_search_value)
+          // console.log("value to filter from: ", get_search_value)
 
-          for (var s = 0; s < this.json.length; s++) {
-            var get_obj = this.json[s];
-            if (get_obj.product_name == get_search_value) {
-              this.new_limit_cards.push(this.json[s])
-            }
-          }
+          // for (var s = 0; s < this.json.length; s++) {
+          //   var get_obj = this.json[s];
+          //   if (get_obj.product_name == get_search_value) {
+          //     this.new_limit_cards.push(this.json[s])
+          //   }
+          // }
           
     //       for (var x = 0; x < 10; x++) {
     //   this.new_limit_cards.push(this.json[x])
@@ -173,7 +169,7 @@ var loveListener = createButtonListener(true);
 
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
-    
+  
   }
 
 }

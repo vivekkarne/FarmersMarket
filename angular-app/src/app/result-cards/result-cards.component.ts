@@ -47,7 +47,7 @@ export class ResultCardsComponent implements OnInit {
   callApi(){
     const url = `https://api-adresse.data.gouv.fr/reverse/?lon=${this.longitude}&lat=${this.latitude}`
     //Call API
-	console.log(url);
+	// console.log(url);
   }
   
 
