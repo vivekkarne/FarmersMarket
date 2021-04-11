@@ -3,20 +3,74 @@
 	<div class="container">
 	  <div class="col-12">
 		<div class="row">
-		  <div class="col-3" *ngFor="let list of cartList">
-			<div class="card">
-			  <div style="overflow:hidden;position:relative;height:15rem;width:100%">
-				<div>{{list['name']}}</div>
-				<div>{{list['description']}}</div>
-				<div>{{list['price']}}</div>
+		  <div class="col-3">
+			<div class="card" style="height:25rem">
+			 <div class="card-text">
+					<div>
+						<img src="https://ucarecdn.com/5872db90-17e0-4d4c-8b65-11d6f8ceaa45/mangos2.jpg"  class="img-fluid">
+					</div>
+					<div style="position:absolute;bottom:0;background-color:white;width:100%;text-align:center">
+						<div style="font-weight:bold;">Mangoes</div>
+						<div style="">$20</div>
+						<div style="padding-bottom:10px">Qty: 2</div>
+					</div>
+
+				</div>
 			  </div>
+			</div>
+			
+			<div class="col-3">
+			<div class="card" style="height:25rem">
+			 <div class="card-text">
+					<div>
+						<img src="https://ucarecdn.com/ac2fd699-127d-4fe3-ac1f-35600aa1421e/cocos_kiwi_orange_dates_salak_plum_tamarilo_maracuja3.jpg"  class="img-fluid">
+					</div>
+					<div style="position:absolute;bottom:0;background-color:white;width:100%;text-align:center">
+						<div style="font-weight:bold;">Kiwi</div>
+						<div style="">$40</div>
+						<div style="padding-bottom:10px">Qty: 1</div>
+					</div>
+
+				</div>
+			  </div>
+			</div>
+			
+			<div class="col-3">
+			<div class="card" style="height:25rem">
+			 <div class="card-text">
+					<div>
+						<img src="https://ucarecdn.com/58c763d3-6280-4831-b517-1ec13a2f610d/cherries5.jpg"  class="img-fluid">
+					</div>
+					<div style="position:absolute;bottom:0;background-color:white;width:100%;text-align:center">
+						<div style="font-weight:bold;">Cherries</div>
+						<div>$30</div>
+						<div style="padding-bottom:10px">Qty: 3</div>
+					</div>
+
+				</div>
+			  </div>
+			</div>
+			
+			<div class="col-3">
+			<div class="card" style="height:25rem">
+			 <div class="card-text">
+					<div>
+						<img src="https://ucarecdn.com/21b51988-9f05-4381-8c73-38ff7fdf3e71/dates.jpg"  class="img-fluid">
+					</div>
+					<div style="position:absolute;bottom:0;background-color:white;width:100%;text-align:center">
+						<div style="font-weight:bold;">Dates</div>
+						<div style="">$10</div>
+						<div style="padding-bottom:10px">Qty: 1</div>
+					</div>
+
+				</div>
 			  </div>
 			</div>
 		</div><br>
 		</div>
 	</div>
-	<div class="container">
-	<button type="button" class="btn btn-outline-primary" (click)="handlePayment()">Make Payment ${{totalVal}}</button>
+	<div class="container" style="text-align:center">
+	<button type="button" class="btn btn-outline-primary" (click)="handlePayment()">Proceed to Checkout ${{totalVal}}</button>
 </div>
 </ng-template>
 <ng-template #other_content>
