@@ -13,6 +13,6 @@ Misc:
 Procfile - Config file for heroku, the Flask framework runs on a gunicorn server hosted here on heroku.
 
 
-Frameworks Used: Pytorch, Flask <br />
+Frameworks: Pytorch, Flask <br />
 Web Server: Gunicorn <br />
 Deployment Cloud: Heroku <br />
