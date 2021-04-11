@@ -3,10 +3,12 @@
 const mongoose = require("mongoose");
 
 // require from dakeData here
+const { username, passwords, merchant_names, location, images } = require("./fakeData");
 
 const customerSchema = require("../models/customer");
 const merchantSchema = require("../models/merchant");
 const productSchema = require("../models/products");
+const cartSchema = require("../models/cart")
 
 mongoose.connect("mongodb://localhost:27017/trojan-hacks", {
   useNewUrlParser: true,
@@ -21,12 +23,15 @@ db.once("open", () => {
   console.log("Database connected");
 });
 
+const sample = (array) => array[Math.floor(Math.random() * array.length)];
+
 // let's generate data
 const storeDB = async () => {
 
     await customerSchema.deleteMany({});
     await merchantSchema.deleteMany({});
     await productSchema.deleteMany({});
+    await cartSchema.deleteMany({});
 
     const cus1 = new customerSchema({
         username: 'johndoe4545',
@@ -37,19 +42,37 @@ const storeDB = async () => {
     })
     await cus1.save();
 
-    const merch1 = new merchantSchema({
-        username: 'merchant13244',
-        password: 'fmghei546',
-        name: 'Merchant One',
-        location: 'Los Angeles, CA',
+    
+    for (let i = 0; i < 10; i++) {
+        const merch1 = new merchantSchema({
+        username: `${sample(username)}`,
+        password: `${sample(passwords)}`,
+        name: `${sample(merchant_names)}`,
+        location: `${sample(location)}`,
     })
     await merch1.save();
+    }
 
-    const prod1 = new productSchema({
-        product_name: 'carrot',
-        quatity_left: 40
-    })
-    await prod1.save();
+    
+// images is a list
+    for (var i = 0; i < images.length; i++) {
+        object = images[i];
+        for (const [key, value] of Object.entries(object)) {
+            prodname = key;
+            // value is again a list
+            for (var j = 0; j < value.length; j++) {
+                newUrl = value[j];
+                random100 = Math.floor(Math.random() * 100);
+                const prod1 = new productSchema({
+                    image_url: newUrl,
+                    product_name: prodname,
+                    price: random100
+                })
+                await prod1.save();
+            }
+        
+        }
+    }
 
 };
 
