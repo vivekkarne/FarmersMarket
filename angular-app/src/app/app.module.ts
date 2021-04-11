@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { ImageUploadComponentComponent } from './image-upload-component/image-upload-component.component';
+import { ResultCardsComponent } from './result-cards/result-cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponentComponent,
-    ImageUploadComponentComponent
+    ImageUploadComponentComponent,
+    ResultCardsComponent
   ],
   imports: [
     BrowserModule,
