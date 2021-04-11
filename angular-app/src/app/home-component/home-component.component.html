@@ -1,10 +1,28 @@
 <div class="container">
-<div class="input-group">
-  <div class="form-outline">
-    <input type="search" id="form1" class="form-control" placeholder="Search"/>
-  </div>
-  <button type="button" class="btn btn-outline-primary">search</button>
-</div>
-<app-image-upload-component></app-image-upload-component>
-<app-result-cards></app-result-cards>
+	<div class="col-12">
+		<div class="row">
+			<div class="col-6">
+			<div class="input-group">
+				<p style="padding-right:10px">Search with text</p>
+				  <div class="form-outline">
+					<input #searchQuery type="search" id="form1" class="form-control" placeholder="Products"/>
+				  </div>
+				<button type="button" class="btn btn-outline-primary" (click)="searchText(searchQuery)">Search</button>
+			</div>
+			</div>
+			<div class="col-6">
+			<div class="input-group">
+				  <p style="padding-right:10px">Search with image</p>
+				  <div class="form-outline" >
+				  <input #imageInput
+						 type="file"
+						 accept="image/*"
+				   >
+				   </div>
+				<button type="button" class="btn btn-outline-primary" (click)="processFile(imageInput)">Upload</button>
+				</div>
+			</div>
+		</div>
+	</div><br>
+	<app-result-cards *ngIf="resultFlag"></app-result-cards>
 </div>

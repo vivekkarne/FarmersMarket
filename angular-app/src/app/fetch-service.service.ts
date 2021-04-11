@@ -9,8 +9,14 @@ export class FetchServiceService {
 
   constructor() {}
   
-  public uploadImage(image: File): Observable<Response> {
+  searchResults=[];
+  
+  public uploadImage(image: File) {
   console.log("In service");
+  var cardList=[{'name':'Product1', 'description':'description1', 'price':20},
+  {'name':'Product2', 'description':'description2', 'price':40},
+  {'name':'Product3', 'description':'description3', 'price':10},
+  {'name':'Product4', 'description':'description4', 'price':30}];
     /*const formData = new FormData();
 
     formData.append('image', image);
@@ -18,14 +24,26 @@ export class FetchServiceService {
 	return new Observable<Response>();
 
     return this.http.post('/api/v1/image-upload', formData);*/
-	return new Observable<Response>();
+	this.searchResults=cardList;
+	return cardList;
   }
   
-  getProducts(price:number){
+  getSearchResults(price:number){
+  console.log("in searchhhhh");
+	return this.getProducts(price);
+  }
+  
+  searchText(query){
 	var cardList=[{'name':'Product1', 'description':'description1', 'price':20},
   {'name':'Product2', 'description':'description2', 'price':40},
   {'name':'Product3', 'description':'description3', 'price':10},
   {'name':'Product4', 'description':'description4', 'price':30}];
+  this.searchResults=cardList;
+  return cardList;
+  }
+  
+  getProducts(price:number){
+	var cardList=this.searchResults;
   
   var cardList2=[];
   for(var x in cardList){
@@ -34,5 +52,13 @@ export class FetchServiceService {
   }
   
   return cardList2;
+  }
+  
+  getProductDetails(){
+	var product={'name':'Product1', 'description':'description1', 'price':20, 'id':'123'}
+  return product;
+  }
+  
+  addToCart(id){
   }
 }

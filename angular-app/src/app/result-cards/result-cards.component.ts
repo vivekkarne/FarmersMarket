@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import { FetchServiceService } from '../fetch-service.service';
 
@@ -8,9 +8,10 @@ import { FetchServiceService } from '../fetch-service.service';
   styleUrls: ['./result-cards.component.css']
 })
 export class ResultCardsComponent implements OnInit {
-  
+  cardList: any;
   priceThresh=0;
-  cardList=[];
+  modalFlag=false;
+  productDetails:any;
   
   constructor(private srv: FetchServiceService) { }
   
@@ -18,15 +19,28 @@ export class ResultCardsComponent implements OnInit {
 	this.ngOnInit();
   }
   
+  openModal(){
+	this.productDetails=this.srv.getProductDetails();
+	this.modalFlag=true;
+  }
+  
+  addToCart(id){
+  this.modalFlag=false;
+	this.srv.addToCart(id);
+  }
+  
+  
+  
 
   ngOnInit(): void {
+  console.log("nggg "+this.cardList);
 	/*this.srv.getProducts(this.priceThresh).subscribe(
       products => {
         this.cardList = products;
       },
       error => this.errorMessage = <any>error
     );*/
-	this.cardList=this.srv.getProducts(this.priceThresh);
+	this.cardList=this.srv.getSearchResults(this.priceThresh);
   }
   
   updatePriceFilter(event){

@@ -1,8 +1,10 @@
-<label class="image-upload-container btn btn-bwm">
-  <span>Select Image</span>
+<div class="input-group">
+  <p style="padding-right:10px">Search with image</p>
+  <div class="form-outline" >
   <input #imageInput
          type="file"
          accept="image/*"
    >
-</label>
+   </div>
 <button type="button" class="btn btn-outline-primary" (click)="processFile(imageInput)">Upload</button>
+</div>
