@@ -22,7 +22,8 @@ class ImageSnippet {
 })
 export class HomeComponentComponent implements OnInit {
    results: any;
-   resultFlag=false;
+  resultFlag = false;
+  test = false;
 
 selectedFile: ImageSnippet;
   constructor(private srv: FetchServiceService, private http: HttpClient,
@@ -30,9 +31,30 @@ selectedFile: ImageSnippet;
     private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    
+    // this.http.get(`http://localhost:9000/predict`)
+    //     .subscribe((data) => {
+    //       console.log("data from post endpoint: ", data)
+    //     })
+  }
+
+
+  dummyfunc() {
+    if (this.test) {
+      this.http.get(`http://localhost:9000/predict`)
+        .subscribe((data) => {
+          console.log("data from post endpoint: ", data)
+        })
+    }
+
+    
   }
   
   processFile(imageInput: any) {
+    this.test = true;
+    if (this.test) {
+      this.dummyfunc()
+    }
   this.resultFlag=false;
 	// console.log("IN process");
     const file: File = imageInput.files[0];
@@ -44,16 +66,21 @@ selectedFile: ImageSnippet;
       console.log("selectedFile: ", this.selectedFile)
       var extract = this.selectedFile.src;
 
-      const headers = {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
-        'Access-Control-Allow-Credentials': 'true'};
+      // const headers = {
+      //   'Access-Control-Allow-Origin': 'http://localhost:3000',
+      //   'Access-Control-Allow-Credentials': 'true'};
 
 
       // post request - to the model
-      this.http.post("https://veggie-predictor.herokuapp.com/predict", extract, {headers})
-        .subscribe((data) => {
-          console.log("data from post endpoint: ", data)
-      })
+      // this.http.get(`http://localhost:9000/predict`)
+      //   .subscribe((data) => {
+      //     console.log("data from post endpoint: ", data)
+      //   })
+      
+      // this.http.post("https://veggie-predictor.herokuapp.com/predict", extract, {headers})
+      //   .subscribe((data) => {
+      //     console.log("data from post endpoint: ", data)
+      // })
 
 
 	  // this.selectedFile.pending = true;

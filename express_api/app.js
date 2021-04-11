@@ -7,6 +7,7 @@ var cors = require("cors");
 
 var homeRouter = require("./routes/home");
 var productsRouter = require("./routes/products");
+var predictRouter = require("./routes/predict");
 
 const bodyParser = require("body-parser");
 
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", homeRouter);
 app.use("/products", productsRouter);
-// app.use("/xyz/:id", xyz); // changes
+app.use("/predict", predictRouter); // changes
 
 const db = require("./models");
 db.mongoose

@@ -5,17 +5,17 @@
     <i class="fa fa-heart"></i>
   </div>
 
-  <div class="tinder--cards">
-  <ng-container *ngFor="let obj of new_limit_cards" let i=index>
+  <div class="tinder--cards" >
+  <!-- <ng-container  let i=index> -->
 
-    <div class="tinder--card">
+    <div class="tinder--card" *ngFor="let obj of new_limit_cards">
       <img style="height: 380px;" src="{{obj.image_url}}">
       <h3>{{obj.product_name}}</h3>
       <p style="color: darkgreen;">Price: {{obj.price}}$</p>
 
     </div>
     
-</ng-container>
+<!-- </ng-container> -->
   </div>
 
   <div class="tinder--buttons">
