@@ -33,10 +33,24 @@ this.http.get("http://localhost:9000/products")
           this.json = data['products_info'];
           console.log("json: ", this.json)
 
+          // get the result value
+          var json_string = localStorage.getItem("result")
+          var actual_json = JSON.parse(json_string)
+          var get_search_value = actual_json.result;
 
-          for (var x = 0; x < 10; x++) {
-      this.new_limit_cards.push(this.json[x])
-    }
+          console.log("value to filter from: ", get_search_value)
+
+          for (var s = 0; s < this.json.length; s++) {
+            var get_obj = this.json[s];
+            if (get_obj.product_name == get_search_value) {
+              this.new_limit_cards.push(this.json[s])
+            }
+          }
+          
+
+    //       for (var x = 0; x < 10; x++) {
+    //   this.new_limit_cards.push(this.json[x])
+    // }
         })
     
     
@@ -60,7 +74,7 @@ this.http.get("http://localhost:9000/products")
           ("style", `z-index: ${allCards.length-index}`)
         
         card.setAttribute
-          ("style", `transform: ${'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)'};`);
+          ("style", `transform: ${'scale(' + (70 - index) / 70 + ') translateY(-' + 30 * index + 'px)'};`);
 
         
     // card.style.zIndex = allCards.length - index;
@@ -69,7 +83,7 @@ this.http.get("http://localhost:9000/products")
         
 
         card.setAttribute
-          ("style",  `opacity: ${(10 - index)}`);
+          ("style",  `opacity: ${(70 - index)}`);
         
   });
   

@@ -102,14 +102,14 @@ body {
 }
 
 .tinder--card h3 {
-  margin-top: 32px;
+  margin-top: 2%;
   font-size: 32px;
   padding: 0 16px;
   pointer-events: none;
 }
 
 .tinder--card p {
-  margin-top: 24px;
+  margin-top: 3%;
   font-size: 20px;
   padding: 0 16px;
   pointer-events: none;

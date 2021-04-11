@@ -7,6 +7,8 @@ router.get("/", async function (req, res, next) {
   // res.send("have to link products page - if any");
 
   const prod_info = await product_schema.find({});
+
+  // final_json = { "prod_info": {"key_val": prod_info}}
   
 
   json = { "products_info": prod_info }

@@ -27,7 +27,7 @@ selectedFile: ImageSnippet;
   
   processFile(imageInput: any) {
   this.resultFlag=false;
-	console.log("IN process");
+	// console.log("IN process");
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
@@ -46,9 +46,18 @@ selectedFile: ImageSnippet;
 	this.router.navigate(['/results']);
   }
   
-  searchText(query){
+  searchText(query) {
+    console.log("query: ", query.value) // searched value
+
+    // storing value in localStorage
+    // initialize localStorage keys
+      var new_empty_json1 = { "result": query.value }
+      var make_it_string1 = JSON.stringify(new_empty_json1);
+      localStorage.setItem("result", make_it_string1)
+
+
   this.resultFlag=false;
-	this.results=this.srv.searchText(query);
+    this.results = this.srv.searchText(query);
 	this.resultFlag=true;
 	this.router.navigate(['/results']);
   }
