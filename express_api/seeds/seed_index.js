@@ -62,7 +62,7 @@ const storeDB = async () => {
             // value is again a list
             for (var j = 0; j < value.length; j++) {
                 newUrl = value[j];
-                random100 = Math.floor(Math.random() * 100);
+                random100 = Math.floor(Math.random() * 5);
                 const prod1 = new productSchema({
                     image_url: newUrl,
                     product_name: prodname,

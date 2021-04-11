@@ -23,25 +23,3 @@
 
 
 <app-swipe></app-swipe>
-
-<div class="modal" id="myModal" *ngIf="modalFlag">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h4 class="modal-title">{{productDetails['name']}}</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        {{productDetails['description']}}
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="addToCart(productDetails['id'])" data-dismiss="modal">Add to Cart</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-

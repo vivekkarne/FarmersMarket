@@ -16,8 +16,8 @@ body {
 }
 
 .tinder {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 90vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,7 @@ body {
 
 .loaded.tinder {
   opacity: 1;
+  margin-bottom: 2em;
 }
 
 .tinder--status {
@@ -62,7 +63,7 @@ body {
 
 .tinder--cards {
   flex-grow: 1;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   text-align: center;
   display: flex;
   justify-content: center;

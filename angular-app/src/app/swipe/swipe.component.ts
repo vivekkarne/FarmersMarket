@@ -46,6 +46,8 @@ this.http.get("http://localhost:9000/products")
               this.new_limit_cards.push(this.json[s])
             }
           }
+
+          console.log("passed value: ", this.new_limit_cards)
           
     //       for (var x = 0; x < 10; x++) {
     //   this.new_limit_cards.push(this.json[x])
