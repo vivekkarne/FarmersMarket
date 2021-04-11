@@ -2,11 +2,15 @@ import { SwipeComponent } from './swipe/swipe.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { MycartComponent } from './mycart/mycart.component';
+import { SuccessPayComponent } from './success-pay/success-pay.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponentComponent },
-	// { path: '**', component: HomeComponentComponent },
-  {path: 'swipe', component: SwipeComponent}
+  {path: 'swipe', component: SwipeComponent},
+  {path: 'mycart', component: MycartComponent},
+  {path: 'successPay', component: SuccessPayComponent},
+  { path: '**', component: HomeComponentComponent }
 ];
 
 

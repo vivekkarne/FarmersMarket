@@ -9,6 +9,8 @@ import { ImageUploadComponentComponent } from './image-upload-component/image-up
 import { SwipeComponent } from './swipe/swipe.component';
 import { FormsModule } from '@angular/forms';
 import { ResultCardsComponent } from './result-cards/result-cards.component';
+import { MycartComponent } from './mycart/mycart.component';
+import { SuccessPayComponent } from './success-pay/success-pay.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ResultCardsComponent } from './result-cards/result-cards.component';
     HomeComponentComponent,
     ImageUploadComponentComponent,
     SwipeComponent,
-    ResultCardsComponent
+    ResultCardsComponent,
+    MycartComponent,
+    SuccessPayComponent
   ],
   imports: [
     BrowserModule,
