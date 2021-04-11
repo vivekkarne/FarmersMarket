@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchServiceService } from '../fetch-service.service';
 
 class ImageSnippet {
 	pending: boolean = false;
@@ -15,21 +16,40 @@ export class ImageUploadComponentComponent implements OnInit {
 
 selectedFile: ImageSnippet;
 
-  constructor() { }
+  constructor(private srv: FetchServiceService) { }
 
   ngOnInit(): void {
   }
   
-   
+   private onSuccess() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'ok';
+	console.log("In success");
+  }
+
+  private onError() {
+    this.selectedFile.pending = false;
+    this.selectedFile.status = 'fail';
+    this.selectedFile.src = '';
+	console.log("In error");
+  }
   
     processFile(imageInput: any) {
+	console.log("IN process");
     const file: File = imageInput.files[0];
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
 
       this.selectedFile = new ImageSnippet(event.target.result, file);
-	  
+	  this.selectedFile.pending = true;
+      this.srv.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+          this.onSuccess();
+        },
+        (err) => {
+          this.onError();
+        })
     });
 
 

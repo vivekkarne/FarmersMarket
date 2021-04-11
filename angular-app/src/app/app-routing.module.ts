@@ -9,6 +9,8 @@ const routes: Routes = [
   {path: 'swipe', component: SwipeComponent}
 ];
 
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

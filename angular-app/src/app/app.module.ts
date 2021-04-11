@@ -8,6 +8,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ImageUploadComponentComponent } from './image-upload-component/image-upload-component.component';
 import { SwipeComponent } from './swipe/swipe.component';
 import { FormsModule } from '@angular/forms';
+import { ResultCardsComponent } from './result-cards/result-cards.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponentComponent,
     ImageUploadComponentComponent,
     SwipeComponent,
+    ResultCardsComponent
   ],
   imports: [
     BrowserModule,
