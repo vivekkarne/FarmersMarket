@@ -1,7 +1,6 @@
 <p>swipe works!</p>
 
 
-
 <div class="tinder">
   <div class="tinder--status">
     <i class="fa fa-remove"></i>
@@ -9,6 +8,18 @@
   </div>
 
   <div class="tinder--cards">
+  <ng-container *ngFor="let obj of new_limit_cards" let i=index>
+
+    <div class="tinder--card">
+      <img style="height: 200px;" src="{{obj.image_url}}">
+      <h3>{{obj.product_name}}</h3>
+      <p></p>
+    </div>
+    
+</ng-container>
+  </div>
+
+<!-- <div class="tinder--cards">
     <div class="tinder--card">
       <img src="https://placeimg.com/600/300/people">
       <h3>Demo card 1</h3>
@@ -34,7 +45,7 @@
       <h3>Demo card 5</h3>
       <p>This is a demo for Tinder like swipe cards</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="tinder--buttons">
     <button id="nope"><i class="fa fa-times"></i></button>

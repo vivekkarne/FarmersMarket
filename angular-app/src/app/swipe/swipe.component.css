@@ -85,6 +85,8 @@ body {
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
+  padding: 8px;
+  border: 1px solid black;
 }
 
 .moving.tinder--card {

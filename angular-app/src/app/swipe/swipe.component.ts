@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import * as Hammer from 'hammerjs';
+
+import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 import {
 HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG} 
 from '@angular/platform-browser';
@@ -14,9 +19,32 @@ export class SwipeComponent implements OnInit {
 
   flag = false;
 
-  constructor() { }
+  json;
+  new_limit_cards = []
+
+  constructor(private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+
+this.http.get("http://localhost:9000/products")
+        .subscribe((data) => {
+          this.json = data['products_info'];
+          console.log("json: ", this.json)
+
+
+          for (var x = 0; x < 10; x++) {
+      this.new_limit_cards.push(this.json[x])
+    }
+        })
+    
+    
+
+    
+
+
+
     var tinderContainer = document.querySelector('.tinder');
     var allCards = document.querySelectorAll('.tinder--card');
     var nope = <HTMLElement>document.getElementById('nope');

@@ -42,8 +42,8 @@ module.exports.location = [
 
 
 module.exports.images = [
-    { "tomatoes": ["https://ucarecdn.com/89534ac7-8d51-43cd-93cf-f86fc414324f", "https://ucarecdn.com/cf4a1f48-05bd-426e-8f82-baa2e2a634ed", "https://ucarecdn.com/6ab4952b-ed2f-42be-ba55-f7b46caca6fd", "https://ucarecdn.com/dfd90040-2ca2-4de9-b1a6-c1e789bfb6a1", "https://ucarecdn.com/226c6d01-c357-46d5-8ddc-46b030a65858"] },
-    { "strawberries": ["https://ucarecdn.com/9d94d568-80a7-44c3-8fae-38094d16d6c9", "https://ucarecdn.com/edaae7c5-41b8-4f44-a6d9-cdc860b95189/strawberries5.jpg", "https://ucarecdn.com/b3f9ef2a-59e1-4b4f-90f6-a35f6d231e0f", "https://ucarecdn.com/23ab4aee-2792-405d-9e3e-69c6d871b0cd/strawberries.jpg", "https://ucarecdn.com/a5efa13d-88ae-4277-9747-92ad2220dc92/strawberries2.jpg"] },
+    { "tomatoes": ["https://ucarecdn.com/89534ac7-8d51-43cd-93cf-f86fc414324f/tomatoes5.jpg", "https://ucarecdn.com/cf4a1f48-05bd-426e-8f82-baa2e2a634ed/tomatoes4.jpg", "https://ucarecdn.com/6ab4952b-ed2f-42be-ba55-f7b46caca6fd/tomatoes3.jpg"] },
+    { "strawberries": ["https://ucarecdn.com/9d94d568-80a7-44c3-8fae-38094d16d6c9/strawberries4.jpg", "https://ucarecdn.com/edaae7c5-41b8-4f44-a6d9-cdc860b95189/strawberries5.jpg", "https://ucarecdn.com/23ab4aee-2792-405d-9e3e-69c6d871b0cd/strawberries.jpg", "https://ucarecdn.com/a5efa13d-88ae-4277-9747-92ad2220dc92/strawberries2.jpg"] },
     { "salak": ["https://ucarecdn.com/2767bbd8-cb61-466e-b648-72ab36df94ad/salak2.jpg", "https://ucarecdn.com/a08d3293-488d-48c0-803a-fa44ca965e13/salak.jpg"] },
     { "tangelo": ["https://ucarecdn.com/ea4d4b81-d620-4970-9fc4-9fadb76766b7/tangelo.jpg"] },
     { "raspberry": ["https://ucarecdn.com/30b6fbaf-a23a-4d5b-9437-69b22aebe082/raspberry4.jpg", "https://ucarecdn.com/2dd230de-adaa-4cbc-b16c-1c42861fe87d/raspberry5.jpg", "https://ucarecdn.com/4a7beb61-110c-48a4-a2f2-760ebcbc4e7c/raspberry3.jpg", "https://ucarecdn.com/b6e12bbf-a2e4-41fb-a375-e23b7aee2db7/raspberry_apple.jpg", "https://ucarecdn.com/3172ffc5-7f61-4e55-9c07-b1fe6c22539e/raspberry2.jpg", "https://ucarecdn.com/47ba75d5-50fa-4684-b462-5b32ed22b3fe/raspberry.jpg"] },

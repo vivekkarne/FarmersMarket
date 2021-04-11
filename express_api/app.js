@@ -6,7 +6,7 @@ var logger = require("morgan");
 var cors = require("cors");
 
 var homeRouter = require("./routes/home");
-var merchantRouter = require("./routes/merchant");
+var productsRouter = require("./routes/products");
 
 const bodyParser = require("body-parser");
 
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", homeRouter);
-app.use("/merchant", merchantRouter);
+app.use("/products", productsRouter);
 // app.use("/xyz/:id", xyz); // changes
 
 const db = require("./models");

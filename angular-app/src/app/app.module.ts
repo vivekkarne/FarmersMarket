@@ -9,6 +9,7 @@ import { ImageUploadComponentComponent } from './image-upload-component/image-up
 import { SwipeComponent } from './swipe/swipe.component';
 import { FormsModule } from '@angular/forms';
 import { ResultCardsComponent } from './result-cards/result-cards.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResultCardsComponent } from './result-cards/result-cards.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
