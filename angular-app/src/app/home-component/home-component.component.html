@@ -3,16 +3,16 @@
 		<div class="row">
 			<div class="col-6">
 			<div class="input-group">
-				<p style="padding-right:10px">Search with text</p>
+				<h6 style="padding-right:10px">Search with text:</h6>
 				  <div class="form-outline">
-					<input #searchQuery type="search" id="form1" class="form-control" placeholder="Products"/>
+					<input #searchQuery type="search" id="form1" class="form-control" placeholder="Products" style="border:1px solid black"/>
 				  </div>
 				<button type="button" class="btn btn-outline-primary" (click)="searchText(searchQuery)">Search</button>
 			</div>
 			</div>
 			<div class="col-6">
 			<div class="input-group">
-				  <p style="padding-right:10px">Search with image</p>
+				  <h6 style="padding-right:10px">Search with image:</h6>
 				  <div class="form-outline" >
 				  <input #imageInput
 						 type="file"
@@ -24,5 +24,6 @@
 			</div>
 		</div>
 	</div><br>
-	<app-result-cards *ngIf="resultFlag"></app-result-cards>
+	<div>
+	</div>
 </div>

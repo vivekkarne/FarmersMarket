@@ -10,6 +10,8 @@ import { SwipeComponent } from './swipe/swipe.component';
 import { FormsModule } from '@angular/forms';
 import { ResultCardsComponent } from './result-cards/result-cards.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MycartComponent } from './mycart/mycart.component';
+import { SuccessPayComponent } from './success-pay/success-pay.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponentComponent,
     ImageUploadComponentComponent,
     SwipeComponent,
-    ResultCardsComponent
+    ResultCardsComponent,
+    MycartComponent,
+    SuccessPayComponent
   ],
   imports: [
     BrowserModule,

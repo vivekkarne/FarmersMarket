@@ -10,8 +10,11 @@ import { FetchServiceService } from '../fetch-service.service';
 export class ResultCardsComponent implements OnInit {
   cardList: any;
   priceThresh=0;
+  locationThresh:number;
   modalFlag=false;
   productDetails:any;
+  latitude:number;
+  longitude:number;
   
   constructor(private srv: FetchServiceService) { }
   
@@ -29,7 +32,23 @@ export class ResultCardsComponent implements OnInit {
 	this.srv.addToCart(id);
   }
   
-  
+  getLocation(): void{
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position)=>{
+          this.longitude = position.coords.longitude;
+          this.latitude = position.coords.latitude;
+          this.callApi();
+        });
+    } else {
+       console.log("No support for geolocation")
+    }
+  }
+
+  callApi(){
+    const url = `https://api-adresse.data.gouv.fr/reverse/?lon=${this.longitude}&lat=${this.latitude}`
+    //Call API
+	console.log(url);
+  }
   
 
   ngOnInit(): void {
@@ -40,7 +59,8 @@ export class ResultCardsComponent implements OnInit {
       },
       error => this.errorMessage = <any>error
     );*/
-	this.cardList=this.srv.getSearchResults(this.priceThresh);
+	this.cardList=this.srv.getSearchResults(this.priceThresh, this.locationThresh, this.latitude, this.longitude);
+	this.getLocation();
   }
   
   updatePriceFilter(event){
@@ -48,6 +68,15 @@ export class ResultCardsComponent implements OnInit {
     var idAttr = target.attributes.id;
     this.priceThresh = target.value.slice(1,target.value.length);
 	console.log(this.priceThresh);
+	this.ngOnChanges();
+	
+  }
+  
+  updateLocationFilter(event){
+	var target = event.target || event.srcElement || event.currentTarget;
+    var idAttr = target.attributes.id;
+    this.locationThresh = target.value.slice(1,target.value.length);
+	console.log(this.locationThresh);
 	this.ngOnChanges();
 	
   }
