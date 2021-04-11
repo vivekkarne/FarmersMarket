@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageUploadComponentComponent } from '../image-upload-component/image-upload-component.component'
 import { ResultCardsComponent } from '../result-cards/result-cards.component'
 import { FetchServiceService } from '../fetch-service.service';
+import { Router} from '@angular/router';
 
 class ImageSnippet {
 	pending: boolean = false;
@@ -19,7 +20,7 @@ export class HomeComponentComponent implements OnInit {
    resultFlag=false;
 
 selectedFile: ImageSnippet;
-  constructor(private srv: FetchServiceService) { }
+  constructor(private srv: FetchServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -42,12 +43,14 @@ selectedFile: ImageSnippet;
 
 
     reader.readAsDataURL(file);
+	this.router.navigate(['/results']);
   }
   
   searchText(query){
   this.resultFlag=false;
 	this.results=this.srv.searchText(query);
 	this.resultFlag=true;
+	this.router.navigate(['/results']);
   }
 
 }

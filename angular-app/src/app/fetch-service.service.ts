@@ -13,10 +13,10 @@ export class FetchServiceService {
   
   public uploadImage(image: File) {
   console.log("In service");
-  var cardList=[{'name':'Product1', 'description':'description1', 'price':20},
-  {'name':'Product2', 'description':'description2', 'price':40},
-  {'name':'Product3', 'description':'description3', 'price':10},
-  {'name':'Product4', 'description':'description4', 'price':30}];
+ var cardList=[{'name':'Product1', 'description':'description1', 'price':20, 'latitude':30, 'longitude':50},
+  {'name':'Product2', 'description':'description2', 'price':40, 'latitude':40, 'longitude':50},
+  {'name':'Product3', 'description':'description3', 'price':10, 'latitude':30, 'longitude':70},
+  {'name':'Product4', 'description':'description4', 'price':30, 'latitude':80, 'longitude':50}];
     /*const formData = new FormData();
 
     formData.append('image', image);
