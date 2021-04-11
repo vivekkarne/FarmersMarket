@@ -2,3 +2,13 @@
     width: 100%;
     margin-top: -7em;
 }
+
+.header{
+        position: absolute;
+    top: 26%;
+    text-align: -webkit-center;
+    width: 100%;
+    font-size: 143px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
